@@ -23,17 +23,17 @@ const autoScroll = () => {
 }
 
 socket.on('message', (txt) => {
-    console.log(txt.text)
+    // console.log(txt.text)
     const html = Mustache.render(msgTemplate, { messageMustache: txt.text, createdAt: moment(txt.createdAt).format('hh:mm A'), username: txt.username })
     messages.insertAdjacentHTML('beforeend', html)
     autoScroll()
 });
 
 socket.on('locationMessage', (txt) => {
-    console.log(txt.text)
+    // console.log(txt.text)
     const html = Mustache.render(positionTemplate, { locationMustache: txt.url, createdAt: moment(txt.createdAt).format('hh:mm A'), username: txt.username })
     messages.insertAdjacentHTML('beforeend', html)
-    console.log('Location shared.')
+    // console.log('Location shared.')
     autoScroll()
 });
 
@@ -55,9 +55,9 @@ msgForm.addEventListener('submit', (e) => {
         msg.value = ''
         msg.focus()
         if (reply) {
-            return console.log(reply)
+            // return console.log(reply)
         }
-        console.log('Message delivered.')
+        // console.log('Message delivered.')
     })
 })
 

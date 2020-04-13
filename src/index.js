@@ -15,7 +15,7 @@ const publicDirectoryPath = path.join(__dirname, '../public')
 app.use(express.static(publicDirectoryPath))
 
 io.on('connection', (socket) => {
-    console.log('New websocket connection detected!')
+    // console.log('New websocket connection detected!')
 
     socket.on('join', ({ username, room }, ackCallback) => {
 
@@ -64,5 +64,5 @@ io.on('connection', (socket) => {
 })
 
 server.listen(port, () => {
-    console.log('server\'s fired up')
+    // console.log('server\'s fired up')
 })
